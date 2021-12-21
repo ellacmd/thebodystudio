@@ -487,9 +487,7 @@ footer h4 {
   .card {
     margin-bottom: 2rem;
   }
-  .mobile-price{
-    display: block;
-  }
+ 
   .team-box {
     justify-content: center;
   }
@@ -498,6 +496,11 @@ footer h4 {
   .plans,
   .footer {
     padding: 2.5rem 5rem;
+  }
+  .footer-box{
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
   }
 
 }
