@@ -1,0 +1,522 @@
+:root {
+  --darkblue: #001233;
+  --lightblue: #0466c8;
+  --darkgrey: #33415c;
+  --lightgrey: #c9c9c9;
+  --white: #fff;
+  --gold: #daa520;
+  --silver: #dcdcdc;
+  --bronze: #8c7853;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Lato", sans-serif;
+}
+h2 {
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+h3 {
+  font-size: 2rem;
+}
+a:link,
+a:visited {
+  display: inline-block;
+  text-decoration: none;
+}
+.header {
+  position: relative;
+  text-align: center;
+  height: 100vh;
+  background-image: linear-gradient(
+    45deg,
+    var(--darkblue),
+    rgba(0, 0, 0, 0.15)
+  );
+  font-size: 2rem;
+}
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.logo {
+  font-family: "Corinthia", sans-serif;
+  font-weight: 700;
+  font-size: 4rem;
+}
+.nav {
+  height: 7rem;
+  color: var(--white);
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 8rem;
+  position: relative;
+  z-index: 1;
+}
+.nav-items ul {
+  display: flex;
+}
+.nav-items li {
+  position: relative;
+  cursor: pointer;
+  list-style: none;
+  padding: 0.3rem;
+}
+.nav-items li:before,
+.nav-items li:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.15rem;
+  left: 0;
+  background-color: var(--white);
+  opacity: 0;
+  transition: all 0.3s;
+}
+.nav-items li:before {
+  top: 0;
+  transform: translateY(1rem);
+}
+.nav-items li:after {
+  bottom: 0;
+  transform: translateY(-1rem);
+}
+
+.nav-items li:hover:before,
+.nav-items li:hover:after {
+  opacity: 1;
+  transform: translateY(0);
+}
+.nav-items li:not(:last-child) {
+  margin-right: 3rem;
+}
+#menuicon{
+  display: none;
+}
+
+.mobile-nav{
+  transform: translateY(-100%);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--darkblue);
+  transition: all .5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+.mobile-nav li{
+  list-style: none;
+  padding: 2rem;
+}
+#closeicon{
+  position: absolute;
+  right: 8rem;
+  top: 3rem;
+}
+
+.content {
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.intro {
+  margin-bottom: 15rem;
+}
+.intro h1 {
+  font-size: 10rem;
+  color: var(--white);
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.join-btn,
+.trainer-btn {
+  color: var(--white);
+  background-image: linear-gradient(
+    100deg,
+    transparent 0%,
+    transparent 50%,
+    var(--lightblue) 50%,
+    var(--lightblue) 100%
+  );
+  padding: 1rem 2rem;
+}
+.btn {
+  border: 1px solid var(--white);
+
+  transform: skewX(-20deg);
+  transition: all 0.2s;
+
+  background-size: 210%;
+  transition: all 0.3s;
+}
+.btn:hover {
+  background-position: 100%;
+}
+.no-slant {
+  display: inline-block;
+  transform: skewX(20deg);
+}
+
+.features {
+  padding: 5rem 10rem;
+  background: linear-gradient(-30deg, var(--darkblue), rgba(0, 0, 0, 0.2)),
+    url("./images/equipment.jpg"), no-repeat;
+  background-size: cover;
+  color: var(--white);
+}
+
+.features-text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+.feature {
+  width: 30rem;
+  margin: 1rem;
+}
+.feature p {
+  text-align: left;
+}
+
+.feature img {
+  width: 4rem;
+  height: 4rem;
+}
+.team {
+  padding: 5rem 10rem;
+  text-align: center;
+  color: var(--white);
+  background-color: var(--lightgrey);
+}
+.team h2 {
+  color: var(--lightblue);
+}
+.team-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.team-box p {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+.item {
+  overflow: hidden;
+  margin: 0 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+}
+.item:hover {
+  transform: scale(1.05);
+}
+.item a {
+  font-size: 1.3rem;
+}
+
+.text-box {
+  background-color: var(--lightblue);
+  padding: 1.2rem 0px;
+}
+.img-box {
+  width: 25rem;
+  height: 30rem;
+}
+
+.img-box img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.bio {
+  color: var(--white);
+  background-image: linear-gradient(
+    100deg,
+    transparent 0%,
+    transparent 50%,
+    var(--white) 50%,
+    var(--white) 100%
+  );
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+}
+.bio:hover {
+  color: var(--lightblue);
+}
+.plans {
+  background: linear-gradient(-35deg, var(--darkblue), rgba(0, 0, 0, 0.15)),
+    url("./images/open.jpg"), no-repeat;
+  color: white;
+  padding: 5rem 10rem;
+}
+
+.card-box {
+  display: flex;
+  justify-content: space-between;
+}
+.card {
+  position: relative;
+  perspective: 1500rem;
+}
+
+.card-side {
+  width: 20rem;
+  height: 30rem;
+  transition: all 0.8s ease;
+  backface-visibility: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+}
+.front {
+  padding: 2rem 2rem;
+}
+.back {
+  background-color: var(--white);
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.card:hover .front {
+  transform: rotateY(-180deg);
+}
+.card:hover .back {
+  transform: rotateY(0);
+}
+.card ul {
+  list-style-type: none;
+  font-size: 1.2rem;
+  padding: 0;
+}
+
+.card li {
+  margin: 1rem;
+}
+.card h3 {
+  text-align: center;
+  font-size: 2.5rem;
+}
+.mobile-price{
+  display: none;
+}
+.gold-btn {
+  background-image: linear-gradient(
+    100deg,
+    transparent 0%,
+    transparent 50%,
+    var(--gold) 50%,
+    var(--gold) 100%
+  );
+  color: white;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--white);
+}
+.silver-btn {
+  background-image: linear-gradient(
+    100deg,
+    transparent 0%,
+    transparent 50%,
+    var(--darkgrey) 50%,
+    var(--darkgrey) 100%
+  );
+  color: white;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--white);
+}
+.bronze-btn {
+  background-image: linear-gradient(
+    100deg,
+    transparent 0%,
+    transparent 50%,
+    var(--bronze) 50%,
+    var(--bronze) 100%
+  );
+  color: white;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--white);
+}
+.amount {
+  display: inline-block;
+  font-size: 5rem;
+  font-weight: lighter;
+  line-height: 3;
+}
+/* Individual Card Styles */
+.gold-front {
+  background-image: linear-gradient(
+    to right bottom,
+    var(--gold),
+    rgba(255, 255, 255, 0.4)
+  );
+}
+.gold-back {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(0, 0, 0, 0.1),
+    var(--gold)
+  );
+}
+.silver-front {
+  background-image: linear-gradient(
+    to right bottom,
+    var(--silver),
+    rgba(58, 51, 118, 0.4)
+  );
+}
+.silver-back {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(58, 51, 118, 0.4),
+    var(--silver)
+  );
+}
+.bronze-front {
+  background-image: linear-gradient(
+    to right bottom,
+    var(--bronze),
+    rgba(50, 128, 205, 0.4)
+  );
+}
+.bronze-back {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(50, 128, 205, 0.4),
+    var(--bronze)
+  );
+}
+/* Footer */
+footer {
+  background-color: var(--darkgrey);
+  color: white;
+  padding: 5rem 10rem;
+}
+.footer-box {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+}
+.footer-logo {
+  width: 20rem;
+}
+.contact,
+.support,
+.about {
+  display: flex;
+  flex-direction: column;
+
+}
+footer a {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+footer h4 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+.socials .fab {
+  font-size: 1.5rem;
+  padding-right: 1rem;
+}
+/* Responsive Design */
+@media only screen and (max-width: 900px) {
+  .team-box {
+    flex-wrap: wrap;
+  }
+  .item {
+    margin-bottom: 2rem;
+  }
+}
+@media only screen and (max-width: 800px) {
+  #menuicon {
+    display: block;
+    cursor: pointer;
+
+  }
+  .mobile-nav.show{
+  transform: translateY(0);
+  }
+  .nav-items {
+    display: none;
+  }
+
+  .card-box {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .card {
+    margin-bottom: 2rem;
+  }
+  .mobile-price{
+    display: block;
+  }
+  .team-box {
+    justify-content: center;
+  }
+  .features,
+  .team,
+  .plans,
+  .footer {
+    padding: 2.5rem 5rem;
+  }
+
+}
+@media only screen and (max-width: 690px) {
+  .intro h1 {
+    font-size: 9rem;
+  }
+  .join-btn,
+  .trainer-btn {
+    padding: 0.5rem 1rem;
+  }
+  
+}
+@media only screen and (max-width: 622px) {
+  .intro h1 {
+    font-size: 5rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+
+}
