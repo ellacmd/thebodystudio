@@ -63,7 +63,8 @@ a:visited {
   height: 7rem;
   color: var(--white);
   font-size: 2rem;
- 
+ display: flex;
+ justify-content: space-between;
   padding: 1rem 8rem;
   position: relative;
   z-index: 1;
@@ -309,6 +310,9 @@ a:visited {
   flex-direction: column;
   justify-content: center;
 }
+.mobile-back{
+  display: none;
+}
 .card:hover .front {
   transform: rotateY(-180deg);
 }
@@ -464,6 +468,23 @@ footer h4 {
   .item {
     margin-bottom: 2rem;
   }
+  .back{
+    display: none;
+  }
+  .front{
+    height: fit-content;
+  }
+  .amount{
+    line-height: 1.5;
+  }
+  .mobile-back{
+      text-align: center;
+  display: flex;
+  flex-direction: column;
+  }
+  .card:hover .front {
+    transform: rotateY(0);
+  }
 }
 @media only screen and (max-width: 800px) {
   #menuicon {
@@ -498,8 +519,8 @@ footer h4 {
   }
   .footer-box{
     flex-direction: column;
-    justify-content: space-between;
-   
+    justify-content: center;
+  
   }
   .contact,
 .support,
